@@ -5,6 +5,10 @@ const expense = document.querySelector("#expense");
 const category = document.querySelector("#category");
 const form = document.querySelector("form");
 
+
+// Seleciona os elementos da lista 
+const expenseList = document.querySelector("ul");   
+
 //Evento que esta capturando o valor do input
 amount.oninput = ()=>{
     //A variavel recebe o valor de amount e com a equacao tira caracteres 
@@ -15,7 +19,7 @@ amount.oninput = ()=>{
 
     //esta passando o valor de amount para o valor convertido de formatCurrencyBRL
     amount.value = formatCurrencyBRL(value);
-    console.log(value);
+    
 }
 
 function formatCurrencyBRL(value){
@@ -43,5 +47,55 @@ form.onsubmit = (event)=>{
         create_at: new Date(),
     }
     
+    //chamando o metodo que criamos abaixo
+    expenseAdd(newExpense);
+}
+
+
+function expenseAdd(newExpense){
+
+    try {
+        //Cria um elemento de li para adicionar na lista (UL)
+
+        const expenseItem = document.createElement("li");
+        expenseItem.classList.add("expense");
+
+        //Cria o icone da categoria
+
+        const expenseIcon = document.createElement("img");
+        expenseIcon.setAttribute("src",`img/${newExpense.category_id}.svg`);
+        expenseIcon.setAttribute("alt", newExpense.category_name);
+
+        //Cria a info da despesa 
+        const expenseInfo = document.createElement("div");
+        expenseInfo.classList.add("expense-info");
+
+        //Nome da despesa
+        const expenseName = document.createElement("strong");
+        expenseName.textContent = newExpense.expense;
+
+        //Cria a categoria da despesa
+        const expenseCategory = document.createElement("span");
+        expenseCategory.textContent = newExpense.category_name;
+
+        // Adiciona name e category na div das informaçoes da despesa
+        expenseInfo.append(expenseName, expenseCategory);
+
+        //Adiciona as informaçoes no item
+        
+        expenseItem.append(expenseIcon, expenseInfo);
+
+        //Adiciona o item na lista
+
+        expenseList.append(expenseItem);
+
+
+
+    } catch (error) {
+
+        alert("Não foi possível atualizar a lista de despesas.");
+       console.log(error); 
+
+    }
 
 }
