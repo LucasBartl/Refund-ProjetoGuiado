@@ -1,7 +1,6 @@
 <h1 align="center">💸 Refund - Projeto Guiado</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Feito%20com-JavaScript-yellow?style=for-the-badge&logo=javascript"/>
   <img src="https://img.shields.io/badge/Estilo-CSS3-blue?style=for-the-badge&logo=css3"/>
   <img src="https://img.shields.io/badge/Layout-HTML5-orange?style=for-the-badge&logo=html5"/>
