@@ -20,7 +20,7 @@ Ele simula um pequeno sistema de controle de despesas, permitindo adicionar info
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (ES6+)**
+- **JavaScript**
 
 ---
 
